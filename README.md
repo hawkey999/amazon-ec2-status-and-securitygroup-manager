@@ -6,7 +6,7 @@ This tool list all your Amazon EC2 in your multiple account, export to a json li
 Steps:  
 * Config your aws configure profile with region, aws_access_key_id and aws_secret_access_key. The file is usually in /Users/myuser/.aws  
    You just need to setup one credentail for each account, you don't have to set each for ever region, the tool will scan all regions.  
-   配置aws config，一个account只需要一个credential，不需要为每个region配置，本工具会自动扫描所有region。
+   配置aws config，一个account只需要一个credential，不需要为每个region配置，本工具会自动扫描所有region。示例：  
 
 ```
    ./config

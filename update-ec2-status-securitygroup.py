@@ -4,6 +4,7 @@ import requests
 import copy
 import json
 import os
+import IPy
 input_update = input(">Show EC2 and SecurityGroup status(Dryrun) or Update as ec2List? (d/u)")
 
 # Display all EC2 status
@@ -27,6 +28,15 @@ print('Checking all EC2 security group...')
 for i in ec2List:
     try:
         access_range = i['access_range']
+        if access_range != 'all' and access_range != 'ALL' \
+                and access_range != 'myip' and access_range != 'MYIP':
+            if access_range[-3] != '/':
+                access_range += '/32'
+            try:
+                IPy.IP(access_range)
+            except Exception as e:
+                print(e)
+                quit()
         ec2client = boto3.session.Session(
             profile_name=i['profile'],
             region_name=i['region']

@@ -3,7 +3,7 @@ import json
 import os
 import IPy
 
-profiles = ['default', 'oregon']
+profiles = ['default', 'oregon', 'hongkong']
 
 input_access_range=input(">Input your EC2 Security Group setting: ALL, MYIP or specific ragne e.g. 50.12.1.0/24 : ")
 if input_access_range != 'all' and input_access_range != 'ALL' \
