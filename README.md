@@ -115,3 +115,5 @@ Now it is changing the EC2 i-66661fooaaaaa1 security group rules, and currently 
 
 * Every time you want to turn on some EC2 or change Security Group to only allow access by your IP, just run the update-ec2-status-securitygroup.py again.  
   每次要改变EC2状态或者安全组规则为只允许本机访问，只需要重新运行 update-ec2-status-securitygroup.py 即可
+
+# 如果你的本地网络出口IP地址会变化，则建议在ec2List中配置固定的IP地址段。如果你的本地网络会根据访问不同的AWS region有不同的出口地址，就像Amazon的内部网络和VPN那样，请你联系作者获取workaround
