@@ -13,7 +13,7 @@ input_update = input(">Show EC2 and SecurityGroup status(Dryrun) or Update as ec
 # requestsIP = requests.get('http://checkip.amazonaws.com/')
 # MYIPaddress = requestsIP.text[0:-1]+'/32'
 
-# For amazon users working within amazon VPN, please us this to get your public IP
+# For amazon users working within amazon VPN, please use this to get your public IP
 requestsIP = requests.get('https://1wi4of3f4e.execute-api.cn-north-1.amazonaws.com.cn/checkip')
 MYIPaddress = requestsIP.text+'/32'
 
