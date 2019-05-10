@@ -10,14 +10,10 @@ input_update = input(">Show EC2 and SecurityGroup status(Dryrun) or Update as ec
 # Display all EC2 status
 
 # For public users, please use this to get your public IP
-# requestsIP = requests.get('http://checkip.amazonaws.com/')
-# MYIPaddress = requestsIP.text[0:-1]+'/32'
-
-# For amazon users working within amazon VPN, please use this to get your public IP
-requestsIP = requests.get('https://1wi4of3f4e.execute-api.cn-north-1.amazonaws.com.cn/checkip')
-MYIPaddress = requestsIP.text+'/32'
-
+requestsIP = requests.get('http://checkip.amazonaws.com/')
+MYIPaddress = requestsIP.text[0:-1]+'/32'
 print('MYIP Address: ', MYIPaddress)
+
 print()
 # import ec2List
 print('Loading EC2 List from: ', os.getcwd()+'/ec2List.json')

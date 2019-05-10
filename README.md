@@ -113,14 +113,5 @@ Stopping EC2 ...
 Now it is changing the EC2 i-66661fooaaaaa1 security group rules, and currently i-66661fooaaaaa2 is running, the tool is going to STOP it.   
 本例中改变了EC2的安全组规则，并且把一个运行中的EC2 STOP关机
 
-Notes: The tool will get your current public IP address by calling a service endpoint. You can change the code to use public aws endpoint checkip.amazonaws.com or a private setup API backed by Amazon API Gateway proxy integrated with a very simple Lambda function as below Python code:  
-注意：本工具会调用一个公共服务端点来获取本机公网IP。普通用户，可以使用aws公开的服务端点 checkip.amazonaws.com 来获得公网IP。但如果你本身是 amazon 员工正在使用VPN连接，则需要访问一个自建的私有API来获取公网IP地址，否则地址是不准确的。本例中使用了 Amazon API Gateway 代理集成了一个非常简单的 Lambda 函数实现获取公网IP，Python 代码如下：  
-```
-def lambda_handler(event, context):
-    return {
-        'statusCode': 200,
-        'body': event['requestContext']['identity']['sourceIp']
-    }
-```
 * Every time you want to turn on some EC2 or change Security Group to only allow access by your IP, just run the update-ec2-status-securitygroup.py again.  
   每次要改变EC2状态或者安全组规则为只允许本机访问，只需要重新运行 update-ec2-status-securitygroup.py 即可
